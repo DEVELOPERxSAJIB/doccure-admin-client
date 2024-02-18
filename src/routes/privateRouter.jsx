@@ -1,3 +1,4 @@
+import PrivateGuard from "./PrivateGuard";
 import Create from "../components/Create/Create";
 import Layout from "../components/Layout/Layout";
 import Brand from "../pages/Brand/Brand";
@@ -9,7 +10,6 @@ import Profile from "../pages/Profile/Profile";
 import Role from "../pages/Role/Role";
 import Tag from "../pages/Tag/Tag";
 import User from "../pages/User/User";
-import PrivateGuard from "./privateGuard";
 
 // create private router
 const privateRouter = [
