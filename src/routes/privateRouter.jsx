@@ -1,8 +1,7 @@
 import Create from "../components/Create/Create";
 import Layout from "../components/Layout/Layout";
-import { Brand } from "../pages/Brand/Brand";
+import Brand from "../pages/Brand/Brand";
 import Category from "../pages/Category/Category";
-
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Permission from "../pages/Permission/Permission";
 import Product from "../pages/Product/Product";

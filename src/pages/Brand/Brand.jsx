@@ -16,7 +16,7 @@ import DataTable from "react-data-table-component";
 import { timeAgo } from "../../helper/helper";
 import swal from "sweetalert";
 
-export const Brand = () => {
+const Brand = () => {
   // table coloums
   const columns = [
     {
@@ -316,3 +316,5 @@ export const Brand = () => {
     </>
   );
 };
+
+export default Brand
