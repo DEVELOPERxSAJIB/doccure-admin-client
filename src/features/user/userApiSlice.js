@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { baseUrl } from "../../utils/baseUrl";
 
 // get all permissions
 export const getAllpermission = createAsyncThunk(
@@ -7,7 +8,7 @@ export const getAllpermission = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(
-        `http://localhost:4040/api/v1/permission`,
+        `${baseUrl}/permission`,
         {
           withCredentials: true,
         }
@@ -26,7 +27,7 @@ export const createPermission = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.post(
-        `http://localhost:4040/api/v1/permission`,
+        `${baseUrl}/permission`,
         data,
         {
           withCredentials: true,
@@ -45,7 +46,7 @@ export const deletePermission = createAsyncThunk(
   async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4040/api/v1/permission/${id}`,
+        `${baseUrl}/permission/${id}`,
         {
           withCredentials: true,
         }
@@ -64,7 +65,7 @@ export const updatePermissionStatus = createAsyncThunk(
   async ({ status, id }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:4040/api/v1/permission/status/${id}`,
+        `${baseUrl}/permission/status/${id}`,
         { status },
         {
           withCredentials: true,
@@ -83,7 +84,7 @@ export const updatePermissionStatus = createAsyncThunk(
 // get all roles
 export const getAllroles = createAsyncThunk("user/getAllroles", async () => {
   try {
-    const response = await axios.get(`http://localhost:4040/api/v1/role`, {
+    const response = await axios.get(`${baseUrl}/role`, {
       withCredentials: true,
     });
 
@@ -97,7 +98,7 @@ export const getAllroles = createAsyncThunk("user/getAllroles", async () => {
 export const createRole = createAsyncThunk("user/createRole", async (data) => {
   try {
     const response = await axios.post(
-      `http://localhost:4040/api/v1/role`,
+      `${baseUrl}/role`,
       data,
       {
         withCredentials: true,
@@ -115,7 +116,7 @@ export const createRole = createAsyncThunk("user/createRole", async (data) => {
 export const updateRole = createAsyncThunk("user/updateRole", async (data) => {
   try {
     const response = await axios.put(
-      `http://localhost:4040/api/v1/role/${data.id}`,
+      `${baseUrl}/role/${data.id}`,
       data,
       {
         withCredentials: true,
@@ -132,7 +133,7 @@ export const updateRole = createAsyncThunk("user/updateRole", async (data) => {
 export const deleteRole = createAsyncThunk("user/deleteRole", async (id) => {
   try {
     const response = await axios.delete(
-      `http://localhost:4040/api/v1/role/${id}`,
+      `${baseUrl}/role/${id}`,
       {
         withCredentials: true,
       }
@@ -150,7 +151,7 @@ export const updateRoleStatus = createAsyncThunk(
   async ({ id, status }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:4040/api/v1/role/status/${id}`,
+        `${baseUrl}/role/status/${id}`,
         { status },
         {
           withCredentials: true,
@@ -167,7 +168,7 @@ export const updateRoleStatus = createAsyncThunk(
 // get all users
 export const getAllUsers = createAsyncThunk("user/getAlluser", async () => {
   try {
-    const response = await axios.get(`http://localhost:4040/api/v1/user`, {
+    const response = await axios.get(`${baseUrl}/user`, {
       withCredentials: true,
     });
 
@@ -181,7 +182,7 @@ export const getAllUsers = createAsyncThunk("user/getAlluser", async () => {
 export const createUser = createAsyncThunk("user/createUser", async (data) => {
   try {
     const response = await axios.post(
-      `http://localhost:4040/api/v1/user`,
+      `${baseUrl}/user`,
       data,
       {
         withCredentials: true,
@@ -198,7 +199,7 @@ export const createUser = createAsyncThunk("user/createUser", async (data) => {
 export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
   try {
     const response = await axios.delete(
-      `http://localhost:4040/api/v1/user/${id}`,
+      `${baseUrl}/user/${id}`,
       {
         withCredentials: true,
       }
@@ -213,7 +214,7 @@ export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
 export const updateUser = createAsyncThunk("user/updateUser", async (data) => {
   try {
     const response = await axios.patch(
-      `http://localhost:4040/api/v1/user/user-update/${data.id}`,
+      `${baseUrl}/user/user-update/${data.id}`,
       {
         name: data.name,
         role: data.role,
@@ -236,7 +237,7 @@ export const updateUserStatus = createAsyncThunk(
   async ({ id, status }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:4040/api/v1/user/${id}`,
+        `${baseUrl}/user/${id}`,
         { status },
         {
           withCredentials: true,

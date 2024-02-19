@@ -1,10 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { baseUrl } from "../../utils/baseUrl";
 
 // get all brand
 export const getAllBrand = createAsyncThunk("product/getAllBrand", async () => {
   try {
-    const response = await axios.get(`http://localhost:4040/api/v1/brand/`, {
+    const response = await axios.get(`${baseUrl}/brand/`, {
       withCredentials: true,
     });
 
@@ -20,7 +21,7 @@ export const createBrand = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.post(
-        `http://localhost:4040/api/v1/brand/`,
+        `${baseUrl}/brand/`,
         data,
         {
           withCredentials: true,
@@ -40,7 +41,7 @@ export const updateBrand = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.put(
-        `http://localhost:4040/api/v1/brand/${data.editId}`,
+        `${baseUrl}/brand/${data.editId}`,
         data.form_data,
         {
           withCredentials: true,
@@ -60,7 +61,7 @@ export const updateBrandStatus = createAsyncThunk(
   async ({ status, id }) => {
     try {
       const response = await axios.put(
-        `http://localhost:4040/api/v1/brand/status/${id}`,
+        `${baseUrl}/brand/status/${id}`,
         { status },
         {
           withCredentials: true,
@@ -80,7 +81,7 @@ export const deleteBrand = createAsyncThunk(
   async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4040/api/v1/brand/${id}`,
+        `${baseUrl}/brand/${id}`,
         {
           withCredentials: true,
         }
@@ -96,7 +97,7 @@ export const deleteBrand = createAsyncThunk(
 // get all Tag
 export const getAllTag = createAsyncThunk("product/getAllTag", async () => {
   try {
-    const response = await axios.get(`http://localhost:4040/api/v1/tag/`, {
+    const response = await axios.get(`${baseUrl}/tag/`, {
       withCredentials: true,
     });
 
@@ -110,7 +111,7 @@ export const getAllTag = createAsyncThunk("product/getAllTag", async () => {
 export const createTag = createAsyncThunk("product/createTag", async (data) => {
   try {
     const response = await axios.post(
-      `http://localhost:4040/api/v1/tag/`,
+      `${baseUrl}/tag/`,
       data,
       {
         withCredentials: true,
@@ -129,7 +130,7 @@ export const updateTag = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.put(
-        `http://localhost:4040/api/v1/tag/${data.id}`,
+        `${baseUrl}/tag/${data.id}`,
         { name : data.name },
         {
           withCredentials: true,
@@ -147,7 +148,7 @@ export const updateTag = createAsyncThunk(
 export const deleteTag = createAsyncThunk("product/deleteTag", async (id) => {
   try {
     const response = await axios.delete(
-      `http://localhost:4040/api/v1/tag/${id}`,
+      `${baseUrl}/tag/${id}`,
       {
         withCredentials: true,
       }
@@ -165,7 +166,7 @@ export const tagStatusChange = createAsyncThunk(
   async ({ status, id }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:4040/api/v1/tag/status/${id}`,
+        `${baseUrl}/tag/status/${id}`,
         { status },
         {
           withCredentials: true,
@@ -185,7 +186,7 @@ export const getAllCategory = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(
-        `http://localhost:4040/api/v1/category`,
+        `${baseUrl}/category`,
         {
           withCredentials: true,
         }
@@ -204,7 +205,7 @@ export const createCategory = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.post(
-        `http://localhost:4040/api/v1/category`,
+        `${baseUrl}/category`,
         data,
         {
           withCredentials: true,
@@ -224,7 +225,7 @@ export const deleteCategory = createAsyncThunk(
   async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4040/api/v1/category/${id}`,
+        `${baseUrl}/category/${id}`,
         {
           withCredentials: true,
         }
@@ -243,7 +244,7 @@ export const categoryStatusUpdate = createAsyncThunk(
   async ({ status, id }) => {
     try {
       const response = await axios.put(
-        `http://localhost:4040/api/v1/category/status/${id}`,
+        `${baseUrl}/category/status/${id}`,
         { status },
         {
           withCredentials: true,

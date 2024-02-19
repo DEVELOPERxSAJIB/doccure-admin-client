@@ -118,7 +118,7 @@ const Profile = () => {
                     alt="User Image"
                     src={
                       user?.photo
-                        ? `http://localhost:4040/images/users/${user.photo}`
+                        ? `https://doccure-dashboard-api.onrender.com/images/users/${user.photo}`
                         : "https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
                     }
                   />

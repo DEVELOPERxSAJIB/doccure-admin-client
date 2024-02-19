@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import smallLogo from "../../assets/img/logo-small.png";
 import logo from "../../assets/img/logo.png";
-import avatar from "../../assets/img/profiles/avatar-01.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../features/auth/authApiSlice";
 import { createToast } from "../../utils/toast";
@@ -59,133 +58,6 @@ const Topbar = () => {
         </a>
 
         <ul className="nav user-menu">
-          {/* <li className="nav-item dropdown noti-dropdown">
-            <a
-              href="#"
-              className="dropdown-toggle nav-link"
-              data-toggle="dropdown"
-            >
-              <i className="fe fe-bell"></i>{" "}
-              <span className="badge badge-pill">3</span>
-            </a>
-            <div className="dropdown-menu notifications">
-              <div className="topnav-dropdown-header">
-                <span className="notification-title">Notifications</span>
-                <a href="#!" className="clear-noti">
-                  {" "}
-                  Clear All{" "}
-                </a>
-              </div>
-              <div className="noti-content">
-                <ul className="notification-list">
-                  <li className="notification-message">
-                    <a href="#">
-                      <div className="media">
-                        <span className="avatar avatar-sm">
-                          <img
-                            className="avatar-img rounded-circle"
-                            alt="User Image"
-                            src={avatar}
-                          />
-                        </span>
-                        <div className="media-body">
-                          <p className="noti-details">
-                            <span className="noti-title">Dr. Ruby Perrin</span>{" "}
-                            Schedule{" "}
-                            <span className="noti-title">her appointment</span>
-                          </p>
-                          <p className="noti-time">
-                            <span className="notification-time">
-                              4 mins ago
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="notification-message">
-                    <a href="#">
-                      <div className="media">
-                        <span className="avatar avatar-sm">
-                          <img
-                            className="avatar-img rounded-circle"
-                            alt="User Image"
-                            src={avatar}
-                          />
-                        </span>
-                        <div className="media-body">
-                          <p className="noti-details">
-                            <span className="noti-title">Dr. Ruby Perrin</span>{" "}
-                            Schedule{" "}
-                            <span className="noti-title">her appointment</span>
-                          </p>
-                          <p className="noti-time">
-                            <span className="notification-time">
-                              4 mins ago
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="notification-message">
-                    <a href="#">
-                      <div className="media">
-                        <span className="avatar avatar-sm">
-                          <img
-                            className="avatar-img rounded-circle"
-                            alt="User Image"
-                            src={avatar}
-                          />
-                        </span>
-                        <div className="media-body">
-                          <p className="noti-details">
-                            <span className="noti-title">Dr. Ruby Perrin</span>{" "}
-                            Schedule{" "}
-                            <span className="noti-title">her appointment</span>
-                          </p>
-                          <p className="noti-time">
-                            <span className="notification-time">
-                              4 mins ago
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li className="notification-message">
-                    <a href="#">
-                      <div className="media">
-                        <span className="avatar avatar-sm">
-                          <img
-                            className="avatar-img rounded-circle"
-                            alt="User Image"
-                            src={avatar}
-                          />
-                        </span>
-                        <div className="media-body">
-                          <p className="noti-details">
-                            <span className="noti-title">Dr. Ruby Perrin</span>{" "}
-                            Schedule{" "}
-                            <span className="noti-title">her appointment</span>
-                          </p>
-                          <p className="noti-time">
-                            <span className="notification-time">
-                              4 mins ago
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="topnav-dropdown-footer">
-                <a href="#">View all Notifications</a>
-              </div>
-            </div>
-          </li> */}
-
           <li className="nav-item dropdown has-arrow">
             <a
               href="#"
@@ -197,7 +69,7 @@ const Topbar = () => {
                   className="rounded-circle"
                   src={
                     user?.photo
-                      ? `http://localhost:4040/images/users/${user.photo}`
+                      ? `https://doccure-dashboard-api.onrender.com/images/users/${user.photo}`
                       : `https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png`
                   }
                   width={40}
@@ -213,7 +85,7 @@ const Topbar = () => {
                     <img
                       src={
                         user?.photo
-                          ? `http://localhost:4040/images/users/${user.photo}`
+                          ? `https://doccure-dashboard-api.onrender.com/images/users/${user.photo}`
                           : `https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png`
                       }
                       alt={user?.name}
